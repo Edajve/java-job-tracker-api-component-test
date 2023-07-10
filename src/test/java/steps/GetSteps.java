@@ -50,6 +50,12 @@ public class GetSteps {
                         "\"round_1\":\"false\",\"round_2\":\"newly set value\",\"round_3\":" +
                         "\"newly set value\",\"final\":\"newly set value\",\"notes\":\"newly set value\"}]}";
 
-        Assert.assertTrue("This is not matching", applicationWithIdOfOne.equals(jsonString));
+        Assert.assertEquals("This is not matching", applicationWithIdOfOne, jsonString);
+    }
+
+    @Then("Then user should should receive an response with an empty data array")
+    public void thenUserShouldShouldReceiveAnResponseWithAnEmptyDataArray() {
+        String unavailableData = "{\"success\":true,\"data\":[]}";
+        Assert.assertEquals("This is not matching", unavailableData, jsonString);
     }
 }
