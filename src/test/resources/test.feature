@@ -4,5 +4,5 @@ Feature: Login
     Given Health check is passing healthy
 
   Scenario: User requests for all applications
-    When user logs in with "correct credentials"
-    Then user should be logged into their account
+    When user hits endpoint "/api/v1/applications"
+    Then Then user should
