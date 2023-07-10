@@ -1,8 +1,5 @@
-Feature: Login
-
-  Background:
-    Given Health check is passing healthy
+Feature: Applications API Functionality
 
   Scenario: User requests for all applications
     When user hits endpoint "/api/v1/applications"
-    Then Then user should
+    Then Then user should should receive all application
