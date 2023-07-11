@@ -3,10 +3,17 @@ package steps;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Assert;
 import utils.ConfigReader;
+
+import java.util.List;
+import java.util.Map;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class GetSteps {
 
@@ -27,6 +34,7 @@ public class GetSteps {
         //Didn't add validate yet for this
         //need to figure out a way to validate
         //this after other tests have run
+        assertEquals(200, response.getStatusCode());
         Assert.assertTrue(true);
     }
 
@@ -38,24 +46,45 @@ public class GetSteps {
         jsonString = response.asString();
     }
 
-    @Then("Then user should should receive an individual application")
-    public void then_user_should_should_receive_an_individual_application() {
-        String applicationWithIdOfOne =
-                "{\"success\":true,\"data\":[{\"id\":1,\"site\":\"set new new\"," +
-                        "\"date\":\"2023-09-02T05:00:00.000Z\",\"date_applied_to\":\"2023-09-02T05:00:00.000Z" +
-                        "\",\"company_name\":\"adfasfds\",\"position\":\"newly set value\"," +
-                        "\"fulltime_contract\":true,\"salary\":1212121,\"company_website\"" +
-                        ":\"newly set value\",\"contact_info\":\"newly set value\",\"call_bac" +
-                        "k_date\":\"newly set value\",\"tech_stack\":\"newly set value\"," +
-                        "\"round_1\":\"false\",\"round_2\":\"newly set value\",\"round_3\":" +
-                        "\"newly set value\",\"final\":\"newly set value\",\"notes\":\"newly set value\"}]}";
+    @Then("Then user should should receive an individual application of {string}")
+    public void thenUserShouldShouldReceiveAnIndividualApplicationOf(String id) {
 
-        Assert.assertEquals("This is not matching", applicationWithIdOfOne, jsonString);
+        JsonPath jsonPath = response.jsonPath();
+
+        // Validate the "id" field
+        int expectedId = Integer.parseInt(id);
+        int actualId = jsonPath.getInt("data[0].id");
+        assertEquals(expectedId, actualId);
+
+        // Validate the "company_name" field
+        String expectedCompanyName = "company_name test 2";
+        String actualCompanyName = jsonPath.getString("data[0].company_name");
+        assertEquals(expectedCompanyName, actualCompanyName);
+
+        assertEquals(200, response.getStatusCode());
     }
 
     @Then("Then user should should receive an response with an empty data array")
     public void thenUserShouldShouldReceiveAnResponseWithAnEmptyDataArray() {
-        String unavailableData = "{\"success\":true,\"data\":[]}";
-        Assert.assertEquals("This is not matching", unavailableData, jsonString);
+        JsonPath jsonPath = response.jsonPath();
+        assertNull(jsonPath.get("data[0]"));
+        assertEquals(200, response.getStatusCode());
+    }
+
+    @When("user hits endpoint {string} with company name of of {string}")
+    public void userHitsEndpointWithCompanyNameOfOf(String endpoint, String companyName) {
+        RestAssured.baseURI = BASE_URL;
+        RequestSpecification request = RestAssured.given();
+        response = request.get(endpoint + "/query?company_name=" + companyName);
+        jsonString = response.asString();
+    }
+
+    @Then("Then user should receive all applications with the company name of {string}")
+    public void thenUserShouldReceiveAllApplicationsWithTheCompanyNameOf(String expectedCompanyName) {
+        JsonPath jsonPath = response.jsonPath();
+        List<Map<String, Object>> dataList = response.jsonPath().getList("data");
+
+        for (Map<String, Object> object : dataList) Assert.assertEquals("company_name test 2", object.get("company_name"));
+        assertEquals(200, response.getStatusCode());
     }
 }
