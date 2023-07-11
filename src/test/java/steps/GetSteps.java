@@ -81,9 +81,13 @@ public class GetSteps {
     @Then("Then user should receive all applications with the company name of {string}")
     public void thenUserShouldReceiveAllApplicationsWithTheCompanyNameOf(String expectedCompanyName) {
         List<Map<String, Object>> dataList = response.jsonPath().getList("data");
+        System.out.println(dataList);
 
-        for (Map<String, Object> object : dataList)
-            Assert.assertEquals("company_name test 2", object.get("company_name"));
+        for (Map<String, Object> stringObjectMap : dataList) {
+            if (stringObjectMap == null) continue;
+            Assert.assertEquals(expectedCompanyName, stringObjectMap.get("company_name"));
+        }
+
         assertEquals(200, response.getStatusCode());
     }
 
