@@ -9,11 +9,11 @@ import io.restassured.specification.RequestSpecification;
 import org.junit.Assert;
 import utils.ConfigReader;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
 
 public class GetSteps {
 
@@ -48,15 +48,12 @@ public class GetSteps {
 
     @Then("Then user should should receive an individual application of {string}")
     public void thenUserShouldShouldReceiveAnIndividualApplicationOf(String id) {
-
         JsonPath jsonPath = response.jsonPath();
 
-        // Validate the "id" field
         int expectedId = Integer.parseInt(id);
         int actualId = jsonPath.getInt("data[0].id");
         assertEquals(expectedId, actualId);
 
-        // Validate the "company_name" field
         String expectedCompanyName = "company_name test 2";
         String actualCompanyName = jsonPath.getString("data[0].company_name");
         assertEquals(expectedCompanyName, actualCompanyName);
@@ -71,20 +68,58 @@ public class GetSteps {
         assertEquals(200, response.getStatusCode());
     }
 
-    @When("user hits endpoint {string} with company name of of {string}")
+    @When("user hits endpoint {string} with company name of {string}")
     public void userHitsEndpointWithCompanyNameOfOf(String endpoint, String companyName) {
         RestAssured.baseURI = BASE_URL;
-        RequestSpecification request = RestAssured.given();
-        response = request.get(endpoint + "/query?company_name=" + companyName);
+        RequestSpecification request = RestAssured.given()
+                .queryParam("company_name", companyName);
+        response = request.get(endpoint);
+        System.out.println(response);
         jsonString = response.asString();
     }
 
     @Then("Then user should receive all applications with the company name of {string}")
     public void thenUserShouldReceiveAllApplicationsWithTheCompanyNameOf(String expectedCompanyName) {
-        JsonPath jsonPath = response.jsonPath();
         List<Map<String, Object>> dataList = response.jsonPath().getList("data");
 
-        for (Map<String, Object> object : dataList) Assert.assertEquals("company_name test 2", object.get("company_name"));
+        for (Map<String, Object> object : dataList)
+            Assert.assertEquals("company_name test 2", object.get("company_name"));
+        assertEquals(200, response.getStatusCode());
+    }
+
+    @When("user hits endpoint {string} with and query {string}")
+    public void userHitsEndpointWithAndQuery(String endpoint, String columnToAscendBy) {
+        RestAssured.baseURI = BASE_URL;
+        RequestSpecification request = RestAssured.given()
+                .queryParam("column", columnToAscendBy);
+        response = request.get(endpoint);
+        jsonString = response.asString();
+
+    }
+
+    @Then("Then user should should receive an response with all applications ascending by salary")
+    public void thenUserShouldShouldReceiveAnResponseWithAllApplicationsAscendingBySalary() {
+        List<Map<String, Object>> dataList = response.jsonPath().getList("data");
+        List<String> listOfSalaries = new ArrayList<>();
+
+        for (Map<String, Object> object : dataList) {
+            if (object.get("salary") == null) continue;
+            listOfSalaries.add(object.get("salary").toString());
+        }
+
+        boolean[] isSalaryAscending = new boolean[1];
+
+        for (int i = 0; i < listOfSalaries.size(); i++) {
+            if (listOfSalaries.size() - 1 == i) continue;
+            if (Integer.parseInt(listOfSalaries.get(i)) <= Integer.parseInt(listOfSalaries.get(i + 1))) {
+                isSalaryAscending[0] = true;
+            }else {
+                isSalaryAscending[0] = false;
+                break;
+            }
+        }
+
+        assertTrue(isSalaryAscending[0]);
         assertEquals(200, response.getStatusCode());
     }
 }
