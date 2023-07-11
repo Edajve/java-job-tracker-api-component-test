@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a1ae7f5-74dc-41bf-8cf3-6002759a51a3" name="Changes" comment="Delete hooks">
+    <list default="true" id="8a1ae7f5-74dc-41bf-8cf3-6002759a51a3" name="Changes" comment="Add get applications by column name">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/steps/GetSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/GetSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/test.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/test.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +61,7 @@
       <recent name="$PROJECT_DIR$/src/test/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: User request a individual application(s) company name">
+  <component name="RunManager" selected="Cucumber Java.Feature: test">
     <configuration name="Feature: test" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/test.feature" />
@@ -122,15 +121,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: User request a individual application that does not exist" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: User request a individual application(s) company name that does not exist" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/test.feature" />
       <option name="GLUE" value="steps" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="job-tracker-api-component-test" />
-      <option name="NAME_FILTER" value="^User request a individual application that does not exist$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User request a individual application that does not exist$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: User request a individual application that does not exist" />
+      <option name="NAME_FILTER" value="^User request a individual application\(s\) company name that does not exist$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User request a individual application\(s\) company name that does not exist$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: User request a individual application(s) company name that does not exist" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -164,11 +163,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Feature: test" />
+        <item itemvalue="Cucumber Java.Scenario: User request a individual application(s) company name that does not exist" />
         <item itemvalue="Cucumber Java.Scenario: User request a individual application(s) company name" />
         <item itemvalue="Cucumber Java.Scenario: User request a individual application by ID" />
         <item itemvalue="Cucumber Java.Scenario: User request a individual application by ID that does not exist" />
-        <item itemvalue="Cucumber Java.Scenario: User request a individual application that does not exist" />
-        <item itemvalue="Cucumber Java.Feature: test" />
       </list>
     </recent_temporary>
   </component>
@@ -180,7 +179,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1689008740042</updated>
-      <workItem from="1689008741793" duration="16552000" />
+      <workItem from="1689008741793" duration="17375000" />
     </task>
     <task id="LOCAL-00001" summary="basic pass through test">
       <created>1689012629898</created>
@@ -217,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689018647269</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add get applications by column name">
+      <created>1689036872692</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1689036872692</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,6 +246,7 @@
     <MESSAGE value="Get Application with specfic id" />
     <MESSAGE value="Get Application with specicif id that doesn't exist" />
     <MESSAGE value="Delete hooks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete hooks" />
+    <MESSAGE value="Add get applications by column name" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add get applications by column name" />
   </component>
 </project>
