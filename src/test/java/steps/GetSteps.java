@@ -29,7 +29,7 @@ public class GetSteps {
         jsonString = response.asString();
     }
 
-    @Then("Then user should should receive all application")
+    @Then("Then user should receive all application")
     public void thenUserShouldShouldReceiveAllApplication() {
         //Didn't add validate yet for this
         //need to figure out a way to validate
@@ -46,7 +46,7 @@ public class GetSteps {
         jsonString = response.asString();
     }
 
-    @Then("Then user should should receive an individual application of {string}")
+    @Then("Then user should receive an individual application of {string}")
     public void thenUserShouldShouldReceiveAnIndividualApplicationOf(String id) {
         JsonPath jsonPath = response.jsonPath();
 
@@ -54,14 +54,14 @@ public class GetSteps {
         int actualId = jsonPath.getInt("data[0].id");
         assertEquals(expectedId, actualId);
 
-        String expectedCompanyName = "company_name test 2";
+        String expectedCompanyName = "Randstad technologies";
         String actualCompanyName = jsonPath.getString("data[0].company_name");
         assertEquals(expectedCompanyName, actualCompanyName);
 
         assertEquals(200, response.getStatusCode());
     }
 
-    @Then("Then user should should receive an response with an empty data array")
+    @Then("Then user should receive an response with an empty data array")
     public void thenUserShouldShouldReceiveAnResponseWithAnEmptyDataArray() {
         JsonPath jsonPath = response.jsonPath();
         assertNull(jsonPath.get("data[0]"));
@@ -74,14 +74,12 @@ public class GetSteps {
         RequestSpecification request = RestAssured.given()
                 .queryParam("company_name", companyName);
         response = request.get(endpoint);
-        System.out.println(response);
         jsonString = response.asString();
     }
 
     @Then("Then user should receive all applications with the company name of {string}")
     public void thenUserShouldReceiveAllApplicationsWithTheCompanyNameOf(String expectedCompanyName) {
         List<Map<String, Object>> dataList = response.jsonPath().getList("data");
-        System.out.println(dataList);
 
         for (Map<String, Object> stringObjectMap : dataList) {
             if (stringObjectMap == null) continue;
@@ -101,7 +99,7 @@ public class GetSteps {
 
     }
 
-    @Then("Then user should should receive an response with all applications ascending by salary")
+    @Then("Then user should receive an response with all applications ascending by salary")
     public void thenUserShouldShouldReceiveAnResponseWithAllApplicationsAscendingBySalary() {
         List<Map<String, Object>> dataList = response.jsonPath().getList("data");
         List<String> listOfSalaries = new ArrayList<>();
