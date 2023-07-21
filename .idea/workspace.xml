@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a1ae7f5-74dc-41bf-8cf3-6002759a51a3" name="Changes" comment="ascend application by salary">
+    <list default="true" id="8a1ae7f5-74dc-41bf-8cf3-6002759a51a3" name="Changes" comment="fixed small issues">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/steps/GetSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/GetSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/test.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/GetAPIs.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,35 +43,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/java" />
       <recent name="$PROJECT_DIR$/src/test/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Feature: test">
-    <configuration name="Feature: test" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Cucumber Java.Feature: PostAPIs">
+    <configuration name="Feature: GetAPIs" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/test.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/GetAPIs.feature" />
       <option name="GLUE" value="steps" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="job-tracker-api-component-test" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: test" />
+      <option name="SUGGESTED_NAME" value="Feature: GetAPIs" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -81,15 +83,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: User request a individual application by ID" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Feature: PostAPIs" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/test.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/PostAPIs.feature" />
       <option name="GLUE" value="steps" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="job-tracker-api-component-test" />
-      <option name="NAME_FILTER" value="^User request a individual application by ID$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User request a individual application by ID$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: User request a individual application by ID" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: PostAPIs" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -101,15 +102,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: User request a individual application(s) company name that does not exist" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: User posts a new application" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/test.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/PostAPIs.feature" />
       <option name="GLUE" value="steps" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="job-tracker-api-component-test" />
-      <option name="NAME_FILTER" value="^User request a individual application\(s\) company name that does not exist$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User request a individual application\(s\) company name that does not exist$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: User request a individual application(s) company name that does not exist" />
+      <option name="NAME_FILTER" value="^User posts a new application$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User posts a new application$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: User posts a new application" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -121,15 +122,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: User request a individual application(s) company name" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: User requests for all applications (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/test.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/GetAPIs.feature" />
       <option name="GLUE" value="steps" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="job-tracker-api-component-test" />
-      <option name="NAME_FILTER" value="^User request a individual application\(s\) company name$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User request a individual application\(s\) company name$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: User request a individual application(s) company name" />
+      <option name="NAME_FILTER" value="^User requests for all applications$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User requests for all applications$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: User requests for all applications" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -141,15 +142,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: User request request applications by ascending salary order" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: User requests for all applications" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/test.feature" />
-      <option name="GLUE" value="steps" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/getRedo.feature" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="job-tracker-api-component-test" />
-      <option name="NAME_FILTER" value="^User request request applications by ascending salary order$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User request request applications by ascending salary order$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: User request request applications by ascending salary order" />
+      <option name="NAME_FILTER" value="^User requests for all applications$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User requests for all applications$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: User requests for all applications" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -163,11 +163,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber Java.Feature: test" />
-        <item itemvalue="Cucumber Java.Scenario: User request a individual application(s) company name that does not exist" />
-        <item itemvalue="Cucumber Java.Scenario: User request a individual application(s) company name" />
-        <item itemvalue="Cucumber Java.Scenario: User request request applications by ascending salary order" />
-        <item itemvalue="Cucumber Java.Scenario: User request a individual application by ID" />
+        <item itemvalue="Cucumber Java.Feature: PostAPIs" />
+        <item itemvalue="Cucumber Java.Scenario: User posts a new application" />
+        <item itemvalue="Cucumber Java.Feature: GetAPIs" />
+        <item itemvalue="Cucumber Java.Scenario: User requests for all applications (1)" />
+        <item itemvalue="Cucumber Java.Scenario: User requests for all applications" />
       </list>
     </recent_temporary>
   </component>
@@ -180,6 +180,9 @@
       <option name="presentableId" value="Default" />
       <updated>1689008740042</updated>
       <workItem from="1689008741793" duration="25829000" />
+      <workItem from="1689426626408" duration="1352000" />
+      <workItem from="1689693768441" duration="28000" />
+      <workItem from="1689845021192" duration="9428000" />
     </task>
     <task id="LOCAL-00001" summary="basic pass through test">
       <created>1689012629898</created>
