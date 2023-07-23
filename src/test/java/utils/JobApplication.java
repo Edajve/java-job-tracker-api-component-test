@@ -1,22 +1,31 @@
 package utils;
 
 public class JobApplication {
+    private String id;
     private String site;
     private String date;
-    private String dateAppliedTo;
-    private String companyName;
+    private String date_applied_to;
+    private String company_name;
     private String position;
-    private boolean fulltimeContract;
+    private boolean fulltime_contract;
     private int salary;
-    private String companyWebsite;
-    private String contactInfo;
-    private String callBackDate;
-    private String techStack;
-    private String round1;
-    private String round2;
-    private String round3;
+    private String company_website;
+    private String contact_info;
+    private String call_back_date;
+    private String tech_stack;
+    private String round_1;
+    private String round_2;
+    private String round_3;
     private String finalRound;
     private String notes;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getSite() {
         return site;
@@ -34,20 +43,20 @@ public class JobApplication {
         this.date = date;
     }
 
-    public String getDateAppliedTo() {
-        return dateAppliedTo;
+    public String getDate_applied_to() {
+        return date_applied_to;
     }
 
-    public void setDateAppliedTo(String dateAppliedTo) {
-        this.dateAppliedTo = dateAppliedTo;
+    public void setDate_applied_to(String date_applied_to) {
+        this.date_applied_to = date_applied_to;
     }
 
-    public String getCompanyName() {
-        return companyName;
+    public String getCompany_name() {
+        return company_name;
     }
 
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+    public void setCompany_name(String company_name) {
+        this.company_name = company_name;
     }
 
     public String getPosition() {
@@ -59,11 +68,11 @@ public class JobApplication {
     }
 
     public boolean isFulltimeContract() {
-        return fulltimeContract;
+        return fulltime_contract;
     }
 
-    public void setFulltimeContract(boolean fulltimeContract) {
-        this.fulltimeContract = fulltimeContract;
+    public void setFulltime_contract(boolean fulltime_contract) {
+        this.fulltime_contract = fulltime_contract;
     }
 
     public int getSalary() {
@@ -74,60 +83,60 @@ public class JobApplication {
         this.salary = salary;
     }
 
-    public String getCompanyWebsite() {
-        return companyWebsite;
+    public String getCompany_website() {
+        return company_website;
     }
 
-    public void setCompanyWebsite(String companyWebsite) {
-        this.companyWebsite = companyWebsite;
+    public void setCompany_website(String company_website) {
+        this.company_website = company_website;
     }
 
-    public String getContactInfo() {
-        return contactInfo;
+    public String getContact_info() {
+        return contact_info;
     }
 
-    public void setContactInfo(String contactInfo) {
-        this.contactInfo = contactInfo;
+    public void setContact_info(String contact_info) {
+        this.contact_info = contact_info;
     }
 
-    public String getCallBackDate() {
-        return callBackDate;
+    public String getCall_back_date() {
+        return call_back_date;
     }
 
-    public void setCallBackDate(String callBackDate) {
-        this.callBackDate = callBackDate;
+    public void setCall_back_date(String call_back_date) {
+        this.call_back_date = call_back_date;
     }
 
-    public String getTechStack() {
-        return techStack;
+    public String getTech_stack() {
+        return tech_stack;
     }
 
-    public void setTechStack(String techStack) {
-        this.techStack = techStack;
+    public void setTech_stack(String tech_stack) {
+        this.tech_stack = tech_stack;
     }
 
-    public String getRound1() {
-        return round1;
+    public String getRound_1() {
+        return round_1;
     }
 
-    public void setRound1(String round1) {
-        this.round1 = round1;
+    public void setRound_1(String round_1) {
+        this.round_1 = round_1;
     }
 
-    public String getRound2() {
-        return round2;
+    public String getRound_2() {
+        return round_2;
     }
 
-    public void setRound2(String round2) {
-        this.round2 = round2;
+    public void setRound_2(String round_2) {
+        this.round_2 = round_2;
     }
 
-    public String getRound3() {
-        return round3;
+    public String getRound_3() {
+        return round_3;
     }
 
-    public void setRound3(String round3) {
-        this.round3 = round3;
+    public void setRound_3(String round_3) {
+        this.round_3 = round_3;
     }
 
     public String getFinalRound() {
@@ -146,47 +155,29 @@ public class JobApplication {
         this.notes = notes;
     }
 
-    public JobApplication(String site, String date, String dateAppliedTo, String companyName, String position,
-                          String fulltimeContract, String salary, String companyWebsite, String contactInfo,
-                          String callBackDate, String techStack, String round1, String round2, String round3,
-                          String finalRound, String notes) {
-        this.site = site;
-        this.date = date;
-        this.dateAppliedTo = dateAppliedTo;
-        this.companyName = companyName;
-        this.position = position;
-        this.fulltimeContract = Boolean.parseBoolean(fulltimeContract);
-        this.salary = Integer.parseInt(salary);
-        this.companyWebsite = companyWebsite;
-        this.contactInfo = contactInfo;
-        this.callBackDate = callBackDate;
-        this.techStack = techStack;
-        this.round1 = round1;
-        this.round2 = round2;
-        this.round3 = round3;
-        this.finalRound = finalRound;
-        this.notes = notes;
+    public JobApplication() {
     }
 
     @Override
     public String toString() {
         return "{" +
-                "site='" + site + '\'' +
-                ", date='" + date + '\'' +
-                ", dateAppliedTo='" + dateAppliedTo + '\'' +
-                ", companyName='" + companyName + '\'' +
-                ", position='" + position + '\'' +
-                ", fulltimeContract=" + fulltimeContract +
-                ", salary=" + salary +
-                ", companyWebsite='" + companyWebsite + '\'' +
-                ", contactInfo='" + contactInfo + '\'' +
-                ", callBackDate='" + callBackDate + '\'' +
-                ", techStack='" + techStack + '\'' +
-                ", round1='" + round1 + '\'' +
-                ", round2='" + round2 + '\'' +
-                ", round3='" + round3 + '\'' +
-                ", finalRound='" + finalRound + '\'' +
-                ", notes='" + notes + '\'' +
+                "\"id\":\"" + id + "\"," +
+                "\"site\":\"" + site + "\"," +
+                "\"date\":\"" + date + "\"," +
+                "\"date_applied_to\":\"" + date_applied_to + "\"," +
+                "\"company_name\":\"" + company_name + "\"," +
+                "\"position\":\"" + position + "\"," +
+                "\"fulltime_contract\":" + fulltime_contract + "," +
+                "\"salary\":" + salary + "," +
+                "\"company_website\":\"" + company_website + "\"," +
+                "\"contact_info\":\"" + contact_info + "\"," +
+                "\"call_back_date\":\"" + call_back_date + "\"," +
+                "\"tech_stack\":\"" + tech_stack + "\"," +
+                "\"round_1\":\"" + round_1 + "\"," +
+                "\"round_2\":\"" + round_2 + "\"," +
+                "\"round_3\":\"" + round_3 + "\"," +
+                "\"final\":\"" + finalRound + "\"," +
+                "\"notes\":\"" + notes + "\"" +
                 '}';
     }
 }
