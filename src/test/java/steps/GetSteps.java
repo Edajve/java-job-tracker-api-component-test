@@ -17,16 +17,14 @@ import static org.junit.Assert.*;
 
 public class GetSteps {
 
-    private static final String BASE_URL = ConfigReader.getProperty("baseURI");
-    private static Response response;
-    private static String jsonString;
+    private final String BASE_URL = ConfigReader.getProperty("baseURI");
+    private Response response;
 
     @When("user hits endpoint {string}")
     public void userHitsEndpoint(String endpoint) {
         RestAssured.baseURI = BASE_URL;
         RequestSpecification request = RestAssured.given();
         response = request.get(endpoint);
-        jsonString = response.asString();
     }
 
     @Then("Then user should receive all application")
@@ -43,7 +41,6 @@ public class GetSteps {
         RestAssured.baseURI = BASE_URL;
         RequestSpecification request = RestAssured.given();
         response = request.get(endpoint + "/" + applicationID);
-        jsonString = response.asString();
     }
 
     @Then("Then user should receive an individual application of {string}")
@@ -74,7 +71,6 @@ public class GetSteps {
         RequestSpecification request = RestAssured.given()
                 .queryParam("company_name", companyName);
         response = request.get(endpoint);
-        jsonString = response.asString();
     }
 
     @Then("Then user should receive all applications with the company name of {string}")
@@ -95,8 +91,6 @@ public class GetSteps {
         RequestSpecification request = RestAssured.given()
                 .queryParam("column", columnToAscendBy);
         response = request.get(endpoint);
-        jsonString = response.asString();
-
     }
 
     @Then("Then user should receive an response with all applications ascending by salary")
@@ -104,9 +98,9 @@ public class GetSteps {
         List<Map<String, Object>> dataList = response.jsonPath().getList("data");
         List<String> listOfSalaries = new ArrayList<>();
 
-        for (Map<String, Object> object : dataList) {
-            if (object.get("salary") == null) continue;
-            listOfSalaries.add(object.get("salary").toString());
+        for (Map<String, Object> responseBody : dataList) {
+            if (responseBody.get("salary") == null) continue;
+            listOfSalaries.add(responseBody.get("salary").toString());
         }
 
         boolean[] isSalaryAscending = new boolean[1];
@@ -115,7 +109,7 @@ public class GetSteps {
             if (listOfSalaries.size() - 1 == i) continue;
             if (Integer.parseInt(listOfSalaries.get(i)) <= Integer.parseInt(listOfSalaries.get(i + 1))) {
                 isSalaryAscending[0] = true;
-            }else {
+            } else {
                 isSalaryAscending[0] = false;
                 break;
             }
