@@ -1,6 +1,6 @@
 package Builders;
 
-import utils.JobApplication;
+import pojo.JobApplication;
 
 public class ApplicationBuilder {
     private String id;

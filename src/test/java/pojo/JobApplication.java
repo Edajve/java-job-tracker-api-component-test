@@ -1,4 +1,6 @@
-package utils;
+package pojo;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class JobApplication {
     private String id;
@@ -16,6 +18,7 @@ public class JobApplication {
     private String round_1;
     private String round_2;
     private String round_3;
+    @JsonProperty("final")
     private String finalRound;
     private String notes;
 

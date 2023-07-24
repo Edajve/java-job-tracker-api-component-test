@@ -13,7 +13,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import utils.ConfigReader;
 import utils.Helpers;
-import utils.JobApplication;
+import pojo.JobApplication;
 
 import java.util.List;
 import java.util.Map;
